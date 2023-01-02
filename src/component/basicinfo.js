@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 const basicinfo = (props) => {
   const { name, change } = props;
   return (
-    <section>
+    <section className="binfo">
       <h2>Personal Information</h2>
       <input
         id="firstName"
@@ -31,7 +31,7 @@ const basicinfo = (props) => {
       <input type="text" placeholder="Email"></input>
       <input type="text" placeholder="Description"></input>
       <p>
-        {name.firstName} {name.lastName} {name.title}
+        {name.title} {name.firstName} {name.lastName}
       </p>
     </section>
   );

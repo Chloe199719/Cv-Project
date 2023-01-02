@@ -6,7 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      firstName: `chloe`,
+      firstName: `Chloe`,
       lastName: `Pratas`,
       title: ``,
     };
