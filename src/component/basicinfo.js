@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 
 const basicinfo = (props) => {
-  const { name, change } = props;
+  const { name, change, imgchange } = props;
   return (
     <section className="binfo">
       <h2>Personal Information</h2>
@@ -26,12 +26,40 @@ const basicinfo = (props) => {
         type="text"
         placeholder="Title"
       ></input>
-      <input type="text" placeholder="Adress"></input>
-      <input type="text" placeholder="Phone Number"></input>
-      <input type="text" placeholder="Email"></input>
-      <input type="text" placeholder="Description"></input>
+      {/* not working */}
+      <input type="file" onChange={imgchange} placeholder="Foto"></input>
+      <input
+        id="address"
+        value={name.address}
+        onChange={change}
+        type="text"
+        placeholder="Address"
+      ></input>
+      <input
+        id="number"
+        value={name.number}
+        onChange={change}
+        type="text"
+        placeholder="Phone Number"
+      ></input>
+      <input
+        id="email"
+        value={name.email}
+        onChange={change}
+        type="text"
+        placeholder="Email"
+      ></input>
+      <input
+        id="desc"
+        value={name.desc}
+        onChange={change}
+        type="text"
+        placeholder="Description"
+      ></input>
       <p>
-        {name.title} {name.firstName} {name.lastName}
+        {name.title} {name.firstName} {name.lastName} {name.address}{" "}
+        {name.number} {name.email} {name.desc}{" "}
+        <img src={name.foto} alt="textimg" width="200px" />
       </p>
     </section>
   );
