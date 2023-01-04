@@ -1,9 +1,9 @@
-import React from "react";
-
-function formatedCV(props) {
+import React, { forwardRef } from "react";
+const FormatedCV = forwardRef((props, ref) => {
   const { name } = props;
+
   return (
-    <section>
+    <section ref={ref}>
       <div className="headerCV">
         <h2>
           {name.firstName} {name.lastName}
@@ -67,6 +67,6 @@ function formatedCV(props) {
       </div>
     </section>
   );
-}
+});
 
-export default formatedCV;
+export default FormatedCV;

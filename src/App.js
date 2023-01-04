@@ -6,6 +6,7 @@ import Education from "./component/education";
 import uniqid from "uniqid";
 import img1 from "./component/img1.jpg";
 import FormatedCV from "./component/formated";
+import ReactToPrint from "react-to-print";
 
 class App extends Component {
   constructor() {
@@ -147,7 +148,16 @@ class App extends Component {
             remove={this.removeEdu}
             change={this.onchangeEdu}
           />
-          <FormatedCV name={this.state} />
+          <ReactToPrint
+            trigger={() => {
+              return <button>Print </button>;
+            }}
+            content={() => this.componentRef}
+          />
+          <FormatedCV
+            name={this.state}
+            ref={(el) => (this.componentRef = el)}
+          />
         </main>
       </>
     );
