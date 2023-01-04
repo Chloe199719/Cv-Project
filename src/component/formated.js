@@ -3,7 +3,7 @@ const FormatedCV = forwardRef((props, ref) => {
   const { name } = props;
 
   return (
-    <section ref={ref}>
+    <section ref={ref} className="formCV">
       <div className="headerCV">
         <h2>
           {name.firstName} {name.lastName}
@@ -13,12 +13,12 @@ const FormatedCV = forwardRef((props, ref) => {
       <div className="mainCV">
         <h2>Description</h2>
         <hr></hr>
-        <p>{name.desc}</p>
-        <h2>Experience</h2>
+        <p className="desc">{name.desc}</p>
+        <h2 className="h2s">Experience</h2>
         <hr></hr>
         {name.exp.map((obj) => {
           return (
-            <div key={obj.id}>
+            <div key={obj.id} className="expbar">
               <p>
                 {obj.from} - {obj.to}
               </p>
@@ -31,12 +31,11 @@ const FormatedCV = forwardRef((props, ref) => {
             </div>
           );
         })}
-        <h2>Education</h2>
+        <h2 className="h2s">Education</h2>
         <hr></hr>
         {name.edu.map((obj) => {
           return (
-            <div key={obj.id}>
-              {" "}
+            <div key={obj.id} className="expbar">
               <p>
                 {obj.from} - {obj.to}
               </p>
@@ -52,16 +51,18 @@ const FormatedCV = forwardRef((props, ref) => {
         })}
       </div>
       <div className="sideBarCV">
-        <img src={name.foto} alt="Owner of the CV" width="100px" />
+        <div className="cvphoto">
+          <img src={name.foto} alt="Owner of the CV" width="100%" />
+        </div>
         <h2>Personal Details</h2>
         <hr></hr>
-        <div>
+        <div className="boldp">
           <p>Address</p> <p>{name.address}</p>
         </div>
-        <div>
+        <div className="boldp">
           <p>Phone Number</p> <p>{name.number}</p>
         </div>
-        <div>
+        <div className="boldp">
           <p>Email</p> <p>{name.email}</p>
         </div>
       </div>

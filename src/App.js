@@ -14,31 +14,31 @@ class App extends Component {
     this.state = {
       firstName: `Chloe`,
       lastName: `Pratas`,
-      title: ``,
+      title: `Senior Web Developer`,
       foto: img1,
-      address: ``,
-      number: ``,
-      email: ``,
-      desc: ``,
+      address: `Example Street 10`,
+      number: `123456789`,
+      email: `john.doe@gmail.com`,
+      desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac ipsum nec gravida. Integer quis porta turpis. Aenean et metus.`,
       exp: [
         {
           id: uniqid(),
-          company: ``,
-          city: ``,
-          from: ``,
-          to: ``,
-          position: ``,
+          company: `Facebook Inc.`,
+          city: `Menlo Park`,
+          from: `2015`,
+          to: `Present`,
+          position: `Senior Web Developer`,
         },
       ],
       edu: [
         {
           id: uniqid(),
-          uniname: ``,
-          city: ``,
-          degree: ``,
-          subject: ``,
-          from: ``,
-          to: ``,
+          uniname: `University of Technology`,
+          city: `Oklahoma`,
+          degree: `Master`,
+          subject: `Science`,
+          from: `2008`,
+          to: `2010`,
         },
       ],
     };
@@ -128,32 +128,37 @@ class App extends Component {
     return (
       <>
         <header>
-          <h1>Cv Maker</h1>
+          <h1>CV MAKER</h1>
         </header>
         <main>
-          <Basicinfo
-            name={this.state}
-            change={this.onchange}
-            imgchange={this.imgchange}
-          />
-          <Experience
-            name={this.state}
-            change={this.onchangeExp}
-            remove={this.removeExp}
-            add={this.addExp}
-          />
-          <Education
-            name={this.state}
-            add={this.addEdu}
-            remove={this.removeEdu}
-            change={this.onchangeEdu}
-          />
-          <ReactToPrint
-            trigger={() => {
-              return <button>Print </button>;
-            }}
-            content={() => this.componentRef}
-          />
+          <div className="content">
+            {" "}
+            <Basicinfo
+              name={this.state}
+              change={this.onchange}
+              imgchange={this.imgchange}
+            />
+            <Experience
+              name={this.state}
+              change={this.onchangeExp}
+              remove={this.removeExp}
+              add={this.addExp}
+            />
+            <Education
+              name={this.state}
+              add={this.addEdu}
+              remove={this.removeEdu}
+              change={this.onchangeEdu}
+            />
+            <ReactToPrint
+              trigger={() => {
+                return <button>Print </button>;
+              }}
+              content={() => this.componentRef}
+              documentTitle="newCV document"
+            />
+          </div>
+
           <FormatedCV
             name={this.state}
             ref={(el) => (this.componentRef = el)}

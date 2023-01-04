@@ -49,18 +49,18 @@ const basicinfo = (props) => {
         type="text"
         placeholder="Email"
       ></input>
-      <input
+      <textarea
         id="desc"
         value={name.desc}
         onChange={change}
         type="text"
         placeholder="Description"
-      ></input>
-      <p>
+      ></textarea>
+      {/* <p>
         {name.title} {name.firstName} {name.lastName} {name.address}{" "}
         {name.number} {name.email} {name.desc}{" "}
         <img src={name.foto} alt="textimg" width="200px" />
-      </p>
+      </p> */}
     </section>
   );
 };
