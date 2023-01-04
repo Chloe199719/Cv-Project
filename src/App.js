@@ -7,6 +7,7 @@ import uniqid from "uniqid";
 import img1 from "./component/img1.jpg";
 import FormatedCV from "./component/formated";
 import ReactToPrint from "react-to-print";
+import Buttons from "./component/buttons";
 
 class App extends Component {
   constructor() {
@@ -150,13 +151,17 @@ class App extends Component {
               remove={this.removeEdu}
               change={this.onchangeEdu}
             />
-            <ReactToPrint
-              trigger={() => {
-                return <button>Print </button>;
-              }}
-              content={() => this.componentRef}
-              documentTitle="newCV document"
-            />
+            <div className="buttons">
+              {" "}
+              <ReactToPrint
+                trigger={() => {
+                  return <button>Print </button>;
+                }}
+                content={() => this.componentRef}
+                documentTitle="newCV document"
+              />
+              <Buttons />
+            </div>
           </div>
 
           <FormatedCV

@@ -21,8 +21,20 @@ h1 {
 input,
 textarea {
   color: #f9fafb;
-  font-size: 1.5rem;
-  background-color: #171717;
+  font-size: 1rem;
+  background-color: #181a1b;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding: 5px;
+  padding-left: 15px;
+}
+input {
+  height: 2rem;
+}
+input:focus,
+textarea:focus {
+  border: 1px #22d3ee solid;
 }
 #root {
   display: grid;
@@ -49,6 +61,7 @@ hr {
 .edu h2 {
   text-align: center;
   color: #f9fafb;
+  margin-bottom: 10px;
 }
 .binfo {
   display: flex;
@@ -61,12 +74,20 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 }
 .exp article,
 .edu article {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
 }
 .content {
   grid-area: cont;
@@ -148,4 +169,22 @@ hr {
 .boldp p {
   padding-top: 5px;
   font-size: 0.9rem;
+}
+
+button {
+  background-color: #1c1917;
+  height: 2.2rem;
+  color: #f9fafb;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 5px 0 5px 0;
+}
+button:hover {
+  outline: 1px solid white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+button:active {
+  transform: translate(0px, -2px);
 }
