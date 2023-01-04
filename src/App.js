@@ -45,11 +45,14 @@ class App extends Component {
       ],
     };
   }
+
+  //  Takes updates from Basinf Info
   onchange = (e) => {
     this.setState({
       [e.target.id]: e.target.value,
     });
   };
+  // Makes the Img avaiable
   imgchange = (e) => {
     if (e.target.files && e.target.files[0]) {
       this.setState({
@@ -57,6 +60,8 @@ class App extends Component {
       });
     }
   };
+
+  //  Remove Button Exp
   removeExp = (e) => {
     const shalowcopy = [...this.state.exp];
     shalowcopy.splice(this.state.exp.indexOf(e), 1);
@@ -64,6 +69,8 @@ class App extends Component {
       exp: shalowcopy,
     });
   };
+
+  // Add Exp
   addExp = () => {
     const shalowcopy = [...this.state.exp];
     shalowcopy.push({
@@ -77,6 +84,9 @@ class App extends Component {
       exp: shalowcopy,
     });
   };
+
+  // Adds to Object everytime there a Change in EXperience
+
   onchangeExp = (e, index) => {
     const shalowcopy = [...this.state.exp];
     const newarr = shalowcopy.map((item, i) => {
@@ -91,6 +101,9 @@ class App extends Component {
       exp: newarr,
     });
   };
+
+  // Adds One more Object to Education Array
+
   addEdu = () => {
     const shalowcopy = [...this.state.edu];
     shalowcopy.push({
@@ -106,6 +119,8 @@ class App extends Component {
       edu: shalowcopy,
     });
   };
+
+  // Removes Selected Object from Education Array
   removeEdu = (e) => {
     const shalowcopy = [...this.state.edu];
     shalowcopy.splice(this.state.edu.indexOf(e), 1);
@@ -113,6 +128,8 @@ class App extends Component {
       edu: shalowcopy,
     });
   };
+
+  // Updates Everytime there a change
   onchangeEdu = (e, index) => {
     const newarr = this.state.edu.map((item, i) => {
       if (index === i) {
@@ -126,6 +143,7 @@ class App extends Component {
       edu: newarr,
     });
   };
+  // Resets Form to a clean State
   onReset = () => {
     this.setState({
       firstName: ``,
@@ -159,6 +177,8 @@ class App extends Component {
       ],
     });
   };
+
+  // Fills the From with Details from my creator (not all details are accurate)
   onExemple = () => {
     this.setState({
       firstName: `Chloe`,

@@ -4,10 +4,21 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/* Base */
 body {
   background-color: #4b5563;
   font-family: "Nunito", sans-serif;
 }
+
+#root {
+  display: grid;
+  grid-template-rows: 120px 1fr 50px;
+  grid-gap: 20px;
+}
+
+/* Header */
+
 header {
   background-color: #27272a;
   color: #f9fafb;
@@ -15,9 +26,12 @@ header {
   justify-content: center;
   align-items: center;
 }
+
 h1 {
   font-size: 3rem;
 }
+
+/* Formating Input Areas */
 input,
 textarea,
 label {
@@ -30,24 +44,30 @@ label {
   padding: 5px;
   padding-left: 15px;
 }
+
 input {
   height: 2rem;
 }
+input:hover,
+textarea:hover,
+label:hover {
+  border: 1px rgba(34, 211, 238, 0.5) solid;
+}
+
 input:focus,
 textarea:focus {
   border: 1px #22d3ee solid;
 }
+
 #photo {
   display: none;
 }
+
 textarea {
   height: 6rem;
 }
-#root {
-  display: grid;
-  grid-template-rows: 120px 1fr 50px;
-  grid-gap: 20px;
-}
+
+/* Main content */
 main {
   display: flex;
   justify-content: center;
@@ -57,12 +77,25 @@ main {
     "cont cv" 1fr /
     1fr 1fr; */
 }
+
 hr {
   height: 1px;
   border: none;
   background-color: white;
   opacity: 0.6;
 }
+
+/* Formating in input side */
+
+/* Left side Container  */
+.content {
+  grid-area: cont;
+  background-color: #27272a;
+  padding: 20px 30px 20px 30px;
+  width: 45%;
+  max-width: 1200px;
+}
+
 .binfo h2,
 .exp h2,
 .edu h2 {
@@ -70,12 +103,14 @@ hr {
   color: #f9fafb;
   margin-bottom: 10px;
 }
+
 .binfo {
   display: flex;
   flex-direction: column;
   gap: 10px;
   grid-area: binfo;
 }
+
 .exp,
 .edu {
   display: flex;
@@ -83,12 +118,14 @@ hr {
   gap: 10px;
   margin-top: 20px;
 }
+
 .exp article,
 .edu article {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
 .buttons {
   display: flex;
   flex-direction: column;
@@ -105,13 +142,9 @@ hr {
 .buttons button:nth-child(3) {
   background-color: #f59e0b;
 }
-.content {
-  grid-area: cont;
-  background-color: #27272a;
-  padding: 20px 30px 20px 30px;
-  width: 45%;
-  max-width: 1200px;
-}
+
+/* Element that Gets Printed */
+
 .formCV {
   grid-area: cv;
   display: grid;
@@ -132,48 +165,60 @@ hr {
   gap: 5px;
   padding: 10px 20px 10px 20px;
 }
+
 .headerCV h2 {
   font-size: 2.5rem;
 }
+
 .headerCV h3 {
   font-size: 1.5rem;
   font-weight: normal;
 }
+
 .mainCV {
   grid-area: body;
   background-color: #27272a;
   padding: 20px;
 }
+
 .mainCV h2 {
   color: #0284c7;
   font-weight: normal;
 }
+
 .mainCV .h2s {
   margin-top: 10px;
 }
+
 .mainCV hr {
   margin-bottom: 10px;
 }
+
 .desc {
   opacity: 0.8;
 }
+
 .expbar {
   display: flex;
 }
+
 .expbar > p {
   width: 30%;
 }
+
 .sideBarCV {
   grid-area: side;
   background-color: #3f3f46;
 
   padding: 15px;
 }
+
 .sideBarCV h2 {
   color: #0284c7;
   padding-top: 15px;
   font-size: 1rem;
 }
+
 .cvphoto {
   display: flex;
   justify-content: center;
@@ -182,11 +227,13 @@ hr {
 .boldp p:first-child {
   font-weight: bold;
 }
+
 .boldp p {
   padding-top: 5px;
   font-size: 0.9rem;
 }
 
+/* Buttons styling  */
 button {
   background-color: #1c1917;
   height: 2.2rem;
@@ -197,14 +244,17 @@ button {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   margin: 5px 0 5px 0;
 }
+
 button:hover {
   outline: 1px solid white;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
+
 button:active {
   transform: translate(0px, -2px);
 }
 
+/* Last Element on the Page */
 footer {
   display: flex;
   align-items: center;
@@ -212,7 +262,17 @@ footer {
   background-color: #171717;
   color: #fafaf9;
 }
+
 svg {
   width: 30px;
   margin-left: 10px;
+}
+@media (max-width: 1200px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    width: 210mm;
+  }
 }
