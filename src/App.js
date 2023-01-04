@@ -8,38 +8,39 @@ import img1 from "./component/img1.jpg";
 import FormatedCV from "./component/formated";
 import ReactToPrint from "react-to-print";
 import Buttons from "./component/buttons";
+import Footer from "./component/footer";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      firstName: `Chloe`,
-      lastName: `Pratas`,
-      title: `Senior Web Developer`,
+      firstName: ``,
+      lastName: ``,
+      title: ``,
       foto: img1,
-      address: `Example Street 10`,
-      number: `123456789`,
-      email: `john.doe@gmail.com`,
-      desc: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac ipsum nec gravida. Integer quis porta turpis. Aenean et metus.`,
+      address: ``,
+      number: ``,
+      email: ``,
+      desc: ``,
       exp: [
         {
           id: uniqid(),
-          company: `Facebook Inc.`,
-          city: `Menlo Park`,
-          from: `2015`,
-          to: `Present`,
-          position: `Senior Web Developer`,
+          company: ``,
+          city: ``,
+          from: ``,
+          to: ``,
+          position: ``,
         },
       ],
       edu: [
         {
           id: uniqid(),
-          uniname: `University of Technology`,
-          city: `Oklahoma`,
-          degree: `Master`,
-          subject: `Science`,
-          from: `2008`,
-          to: `2010`,
+          uniname: ``,
+          city: ``,
+          degree: ``,
+          subject: ``,
+          from: ``,
+          to: ``,
         },
       ],
     };
@@ -125,6 +126,72 @@ class App extends Component {
       edu: newarr,
     });
   };
+  onReset = () => {
+    this.setState({
+      firstName: ``,
+      lastName: ``,
+      title: ``,
+      foto: img1,
+      address: ``,
+      number: ``,
+      email: ``,
+      desc: ``,
+      exp: [
+        {
+          id: uniqid(),
+          company: ``,
+          city: ``,
+          from: ``,
+          to: ``,
+          position: ``,
+        },
+      ],
+      edu: [
+        {
+          id: uniqid(),
+          uniname: ``,
+          city: ``,
+          degree: ``,
+          subject: ``,
+          from: ``,
+          to: ``,
+        },
+      ],
+    });
+  };
+  onExemple = () => {
+    this.setState({
+      firstName: `Chloe`,
+      lastName: `Pratas`,
+      title: `Free Lancer Software Engineer `,
+      foto: img1,
+      address: `Exemple Adress`,
+      number: `+49 123456789`,
+      email: `chloe@chloevision.com`,
+      desc: `Im a self taught software  developer i have skills on Html, Css, Javascript, ReactJS , Git , FireBase, NodeJS, NPM some of my work can be found in my website https://www.chloevision.com/ and ,  https://github.com/Chloe199719 Im Very Motivated to learn any other technology's `,
+      exp: [
+        {
+          id: uniqid(),
+          company: `Amazon`,
+          city: `Seatle`,
+          from: `2018`,
+          to: `2022`,
+          position: `Junior Software`,
+        },
+      ],
+      edu: [
+        {
+          id: uniqid(),
+          uniname: `Havard`,
+          city: `Cambridge`,
+          degree: `Master`,
+          subject: `Computer Science`,
+          from: `2018`,
+          to: `2022`,
+        },
+      ],
+    });
+  };
   render() {
     return (
       <>
@@ -160,7 +227,7 @@ class App extends Component {
                 content={() => this.componentRef}
                 documentTitle="newCV document"
               />
-              <Buttons />
+              <Buttons reset={this.onReset} example={this.onExemple} />
             </div>
           </div>
 
@@ -169,6 +236,7 @@ class App extends Component {
             ref={(el) => (this.componentRef = el)}
           />
         </main>
+        <Footer />
       </>
     );
   }

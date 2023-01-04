@@ -1,10 +1,11 @@
 import React from "react";
 
 function Buttons(props) {
+  const { reset, example } = props;
   return (
     <>
-      <button>Reset</button>
-      <button>Example</button>
+      <button onClick={reset}>Reset</button>
+      <button onClick={example}>Example</button>
     </>
   );
 }

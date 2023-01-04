@@ -27,7 +27,16 @@ const basicinfo = (props) => {
         placeholder="Title"
       ></input>
       {/* not working */}
-      <input type="file" onChange={imgchange} placeholder="Foto"></input>
+      <label htmlFor="photo">
+        <input
+          type="file"
+          onChange={imgchange}
+          placeholder="Foto"
+          name="photo"
+          id="photo"
+        ></input>{" "}
+        Photo
+      </label>
       <input
         id="address"
         value={name.address}

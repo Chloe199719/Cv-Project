@@ -19,7 +19,8 @@ h1 {
   font-size: 3rem;
 }
 input,
-textarea {
+textarea,
+label {
   color: #f9fafb;
   font-size: 1rem;
   background-color: #181a1b;
@@ -35,6 +36,12 @@ input {
 input:focus,
 textarea:focus {
   border: 1px #22d3ee solid;
+}
+#photo {
+  display: none;
+}
+textarea {
+  height: 6rem;
 }
 #root {
   display: grid;
@@ -88,6 +95,15 @@ hr {
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
+}
+.buttons button:first-child {
+  background-color: #16a34a;
+}
+.buttons button:nth-child(2) {
+  background-color: #991b1b;
+}
+.buttons button:nth-child(3) {
+  background-color: #f59e0b;
 }
 .content {
   grid-area: cont;
@@ -187,4 +203,16 @@ button:hover {
 }
 button:active {
   transform: translate(0px, -2px);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #171717;
+  color: #fafaf9;
+}
+svg {
+  width: 30px;
+  margin-left: 10px;
 }
